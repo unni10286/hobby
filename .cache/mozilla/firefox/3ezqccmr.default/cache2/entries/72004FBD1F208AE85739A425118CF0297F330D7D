@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11.1. Using urllib &mdash; python_for_ss 0.1.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="python_for_ss 0.1.1 documentation" href="../index.html"/>
+        <link rel="up" title="11. Introduction to web-crawling in Python" href="web_intro.html"/>
+        <link rel="next" title="11.2. Using HTMLParser" href="HTMLParser.html"/>
+        <link rel="prev" title="11. Introduction to web-crawling in Python" href="web_intro.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="../index.html" class="fa fa-home"> python_for_ss</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Preface/Preface.html">1. Preface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Introduction/Introduction.html">2. Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/what_will_we_learn.html">2.1. What will we learn?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/python_preliminaries.html">2.2. Python preliminaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Introduction/why_open_source.html">2.3. Why open source?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Python_introduction/Python_introduction.html">3. Introduction to Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Python_introduction/python_example.html">3.1. Python example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python_introduction/hello_world.html">3.2. Your first Python program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python_introduction/python_types_first_pass.html">3.3. Python types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python_introduction/python_types_more_types.html">3.4. More Python types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python_introduction/python_types_assignment.html">3.5. Python types assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python_introduction/variables.html">3.6. Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python_introduction/import_this.html">3.7. Poetry break</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python_introduction/summary.html">3.8. Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Python_introduction/quiz.html">3.9. Python types quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../programming_intro/programming_intro.html">4. Introduction to basic Python constructions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/if_then.html">4.1. If-then construction (Conditionals)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/boolean_results.html">4.2. Operators that return Boolean results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/boolean_results.html#how-boolean-tests-work">4.3. How Boolean tests work</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/loops.html">4.4. Loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/list_comprehension.html">4.5. List comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/functions.html">4.6. Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/functions_assignment.html">4.7. Functions, loops, and types assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/nims_assignment.html">4.8. Nims assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/recursion.html">4.9. Recursion (advanced)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/student_scholarship_fund_problem.html">4.10. Student scholarship problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/permutation_example.html">4.11. Permutation (advanced)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/summary.html">4.12. Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../programming_intro/midterm.html">4.13. Midterm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../anatomy/anatomy_introduction.html">5. The Anatomy of a Python program</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/import_statements.html">5.1. Import statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/name_space.html">5.2. Python names and namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/block_structure_indentation.html">5.3. Block structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/functions.html">5.4. Functions and function parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/classes.html">5.5. Classes and class attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/files.html">5.6. Files and file IO streams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/help_and_docstrings.html">5.7. Help and doc strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/making_a_script.html">5.8. A Python program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/putting_it_all_together.html">5.9. Putting it all together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../anatomy/summary.html">5.10. Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../text/text_intro.html">6. Introduction to Text</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../text/putting_it_all_together.html">6.1. Putting it all together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/text_classification.html">6.2. Text Classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../text/regular_expression_intro.html">6.3. Introduction to Python regular expressions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../visualization/Visualization_introduction.html">7. Visualization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/Plotting.html">7.1. Plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/Multidimensional_scaling.html">7.2. Dimensionality reduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/Visualizing_Social_Networks.html">7.3. Visualizing Social Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/Word_clouds.html">7.4. Word clouds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/Twitter_example.html">7.5. Twitter Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../visualization/Python_for_visualization.html">7.6. Python tools for visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../data/data_intro.html">8. Data Frames</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../data/arrays.html">8.1. Numpy and Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/ipython_cookbook_markov_chain_example.html">8.2. A simple Markov chain</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/ipython_cookbook_markov_chain_example.html#vectorized-operations-multiple-simulations">8.3. Vectorized operations: Multiple simulations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/data_frames.html">8.4. Data Frames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/aggregation.html">8.5. Aggregation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/aggregation.html#split-apply-combine">8.6. Split, apply, combine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/PUMS_data.html">8.7. PUMS Census data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/PUMS_data.html#appendix-data-types">8.8. Appendix: Data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/numpy_pandas_quiz.html">8.9. Numpy Pandas quiz</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Social_Networks/Social_Networks_intro.html">9. Introduction to Social Networks</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Social_Networks/Social_Networks.html">9.1. Social Networks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Social_Networks/Networkx.html">9.2. Introduction to Networkx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Social_Networks/using_gephi.html">9.3. Using gephi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Social_Networks/facebook_network_assignment.html">9.4. Facebook Network Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Social_Networks/anna_karenina_network_assignment.html">9.5. Anna Karenina Network Assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../geo/geo_intro.html">10. Introduction to Python geo tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../geo/geopy.html">10.1. Introduction to ggeocoder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geo/using_shapefiles.html">10.2. Using shapefiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../geo/shapefile_assignment.html">10.3. Shapefile assignment</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="web_intro.html">11. Introduction to web-crawling in Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">11.1. Using urllib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="HTMLParser.html">11.2. Using HTMLParser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simple_scraping.html">11.3. Simple scraping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web_crawling.html">11.4. Web Crawling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="twitter.html">11.5. The Twitter API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Assignments/Assignments.html">12. Assignments</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/basic.html">12.1. Basic exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/make_file.html">12.2. Read and create a file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/babynames.html">12.3. Baby names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/word_puzzle.html">12.4. A word puzzle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/turtles.html">12.5. A Turtle problem</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/proper_name_gender.html">12.6. A programming task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/babyname_by_state.html">12.7. Baby names by state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/ss_card_holders.html">12.8. Social security card holders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/social_network_questions.html">12.9. Social Network questions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/social_networks_assignment.html">12.10. Social Network Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/assorted.html">12.11. Assorted assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assignments/final_projects.html">12.12. Final projects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../References/references.html">13. References</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">python_for_ss</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="web_intro.html">11. Introduction to web-crawling in Python</a> &raquo;</li>
+      
+    <li>11.1. Using urllib</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/web/urllib.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="using-urllib">
+<h1>11.1. Using urllib<a class="headerlink" href="#using-urllib" title="Permalink to this headline">Â¶</a></h1>
+<p>A <strong>URL</strong> or <em>Universal Resource Locator</em> is an address on
+the World Wide Web.  In a Python program that
+address will be in the form of a string such as:</p>
+<div class="highlight-python"><div class="highlight"><pre>http://www-rohan.sdsu.edu
+</pre></div>
+</div>
+<p>The Python <em>urllib</em> module is a module that opens a communication
+link with a URL.  The link can then be used to download the raw
+content of the web site.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib</span>
+
+<span class="n">thisurl</span> <span class="o">=</span> <span class="s">&quot;http://www-rohan.sdsu.edu/~gawron/index.html&quot;</span>
+
+<span class="n">handle</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">thisurl</span><span class="p">)</span>
+
+<span class="n">html_gunk</span> <span class="o">=</span>  <span class="n">handle</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If no errors have occurred, the variable <em>handle</em> (line 5) is set to
+a Python socket object which contains information
+about the communication link that has been set up with the website
+and can be used to make further requests.  As data consumers,
+we will mostly be interested in just downloading an entire
+web page and extracting information from it. This is done
+by setting the variable <em>html_gunk</em>
+to the result of calling the <em>read</em> method on <strong>handle</strong> (line 7).</p>
+<p>The variable <em>html_gunk</em> is now set to the string
+downloaded from the webpage, which contains a sequence of commands in Hyper Text
+Markup Language (<strong>HTML</strong>).  HTML
+is a language which, in many cases, is used to specify the content and
+appearances of web  pages.  A web page written in HTML usually signals that
+fact to web browsers by having a URL ending in the extension &#8221;.htm&#8221; or &#8221;.html&#8221;.
+The first few characters  of our example look like this:</p>
+<div class="highlight-python"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">html_gunk</span><span class="p">[:</span><span class="mi">150</span><span class="p">]</span>
+<span class="go">&#39;&lt;html&gt;\n&lt;head&gt;\n&lt;title&gt;Jean Mark Gawron&lt;/title&gt;\n&lt;/head&gt;\n</span>
+<span class="go">&lt;!-- comment wow bgcolor=&quot;   #69301C&quot; pr &quot;#2060a0&quot;  #778899\n&lt;body bgcolor=&quot;#A91609&quot;</span>
+<span class="go">text=&quot;#ffff&#39;</span>
+</pre></div>
+</td></tr></table></div>
+<p>Most people downloading data from the web are not interested in
+looking at HTML.  They are interested only extracting the content
+expressed in it.  This is the job of the HTML parser discussed
+in the next section.</p>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="HTMLParser.html" class="btn btn-neutral float-right" title="11.2. Using HTMLParser">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="web_intro.html" class="btn btn-neutral" title="11. Introduction to web-crawling in Python"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Jean Mark Gawron.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>Ö$Bð/      X°<ºX°<»=y`ÅX°Er   W    :http://www-rohan.sdsu.edu/~gawron/python_for_ss/course_core/book_draft/web/urllib.html strongly-framed 1 request-method GET response-head HTTP/1.1 200 OK
+Date: Fri, 24 Feb 2017 13:50:09 GMT
+Server: Apache
+Last-Modified: Sat, 21 Nov 2015 19:34:20 GMT
+Accept-Ranges: bytes
+Content-Length: 19694
+Cache-Control: max-age=3600, public
+Age: 1368
+Content-Type: text/html
+ original-response-headers Date: Fri, 24 Feb 2017 13:50:09 GMT
+Server: Apache
+Last-Modified: Sat, 21 Nov 2015 19:34:20 GMT
+Accept-Ranges: bytes
+Content-Length: 19694
+Cache-Control: max-age=3600, public
+Age: 1368
+Content-Type: text/html
+Connection: keep-alive
+ uncompressed-len 0   Lî

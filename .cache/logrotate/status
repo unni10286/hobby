@@ -1,0 +1,15 @@
+logrotate state -- version 2
+"/home/unni/.cache/upstart/window-stack-bridge.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/hud.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/dbus.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/indicator-sound.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/*.log" 2017-1-24-22:0:0
+"/home/unni/.cache/upstart/update-notifier-release.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/ssh-agent.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/unity7.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/gnome-keyring-ssh.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/unity-settings-daemon.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/gpg-agent.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/unity-panel-service.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/update-notifier-crash-_var_crash__usr_bin_gnome-software.1000.crash.log" 2017-2-24-19:13:9
+"/home/unni/.cache/upstart/upstart-event-bridge.log" 2017-2-24-19:13:9

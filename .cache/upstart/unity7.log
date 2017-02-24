@@ -1,0 +1,7 @@
+WARN  2017-02-24 19:13:34 unity.shell.compiz unityshell.cpp:3228 Animation plugin not found. Can't set minimize speed.
+1487944224412	addons.update-checker	WARN	Update manifest for e10srollout@mozilla.org did not contain an updates property
+1487944224446	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+1487944224454	addons.update-checker	WARN	Update manifest for aushelper@mozilla.org did not contain an updates property
+1487944224472	addons.update-checker	WARN	Update manifest for webcompat@mozilla.org did not contain an updates property
+1487944224627	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+ATTENTION: default value of option force_s3tc_enable overridden by environment.
